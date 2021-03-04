@@ -69,10 +69,10 @@ class App extends React.Component{
 				</div>
 				<div className="buttonArea">
 					<div className="btn-container">
-						<Button number="7"/>
+						<Button number="0"/>
 					</div>
 					<div className="btn-container">
-						<Button number="7"/>
+						<Button number="."/>
 					</div>
 					<div className="btn-container">
 						<button onClick={() => this.getOperator("+")}>+</button>
