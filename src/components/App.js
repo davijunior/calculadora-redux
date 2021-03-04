@@ -1,17 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Button from './Button'
 
 class App extends React.Component{
 
 	state = {
 		visor: "",
-		memoria: "",
+		memory: "",
 		operation: ""
 	}
 
-	writeVisor = (s) => {
-		this.props.dispatch({type: 'TO_VISOR', data: s})
-	}
+	
 
 	getOperator = (s) => {
 		this.props.dispatch({type: 'OPERATION', data: s})
@@ -24,17 +23,17 @@ class App extends React.Component{
 	render(){
 		return(
 			<div className="calculadora">
-				<div className="visor"><span className="memo">{this.props.memoria}</span><hr /></div>
+				<div className="visor"><span className="memo">{this.props.memory}</span><hr /></div>
 				<div className="visor"><span>{this.props.visor}</span></div>
 				<div className="buttonArea">
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('7')}>7</button>
+						<Button number="7"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('8')}>8</button>
+						<Button number="8"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('9')}>9</button>
+						<Button number="9"/>
 					</div>
 					<div className="btn-container">
 						<button onClick={() => this.getOperator("/")}>/</button>
@@ -42,13 +41,13 @@ class App extends React.Component{
 				</div>
 				<div className="buttonArea">
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('4')}>4</button>
+						<Button number="4"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('5')}>5</button>
+						<Button number="5"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('6')}>6</button>
+						<Button number="6"/>
 					</div>
 					<div className="btn-container">
 						<button onClick={() => this.getOperator("*")}>*</button>
@@ -56,13 +55,13 @@ class App extends React.Component{
 				</div>
 				<div className="buttonArea">
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('1')}>1</button>
+						<Button number="1"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('2')}>2</button>
+						<Button number="2"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('3')}>3</button>
+						<Button number="3"/>
 					</div>
 					<div className="btn-container">
 						<button onClick={() => this.getOperator("-")}>-</button>
@@ -70,10 +69,10 @@ class App extends React.Component{
 				</div>
 				<div className="buttonArea">
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('0')}>0</button>
+						<Button number="7"/>
 					</div>
 					<div className="btn-container">
-						<button onClick={() => this.writeVisor('.')}>.</button>
+						<Button number="7"/>
 					</div>
 					<div className="btn-container">
 						<button onClick={() => this.getOperator("+")}>+</button>
@@ -90,7 +89,7 @@ class App extends React.Component{
 function mapStateToProps(state){
 	return{
 		visor: state.visor,
-		memoria: state.memoria,
+		memory: state.memory,
 		operation: state.operation
 	}
 }
